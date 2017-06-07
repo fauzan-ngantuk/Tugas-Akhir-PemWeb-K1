@@ -30,7 +30,7 @@
       <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="img/sekolah1.jpg">
+              <img src="img/sekolah1.png">
             </div>
             <div>
               <h1 style="font-size: 16px; margin: 0px; padding: 24px; padding-bottom: 0px"><b>Susahnya akses ke sekolah</b></h1>
@@ -48,7 +48,7 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="img/sekolah1.jpg">
+              <img src="img/sekolah1.png">
             </div>
             <div>
               <h1 style="font-size: 16px; margin: 0px; padding: 24px; padding-bottom: 0px"><b>Susahnya akses ke sekolah</b></h1>

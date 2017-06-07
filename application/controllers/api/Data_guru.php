@@ -15,4 +15,100 @@ class Data_guru extends REST_Controller {
 		$user = $this->db->get('data_guru')->result();
 		$this->response($user, 200);
 	}
+	public function index_post()
+	{
+		$data = array(
+			'npsn' => $this->post('npsn'),
+			'thn_ajaran' => $this->post('thn_ajaran'),
+			'nbm' => $this->post('nbm'),
+			'nama_guru' => $this->post('nama_guru'),
+			'bidang' => $this->post('bidang'),
+			'nuptk' => $this->post('nuptk'),
+			'nip' => $this->post('nip'),
+			'tempat_lahir' => $this->post('tempat_lahir'),
+			'tgl_lahir' => $this->post('tgl_lahir'),
+			'telepon' => $this->post('telepon'),
+			'pangakat_golruang' => $this->post('pangakat_golruang'),
+			'tgl_pengangkatan' => $this->post('tgl_pengangkatan'),
+			'sertifikasi_guru' => $this->post('sertifikasi_guru'),
+			'tmt_sertifikasi' => $this->post('tmt_sertifikasi'),
+			'jk' => $this->post('jk'),
+			'sts_pegawai' => $this->post('sts_pegawai'),
+			'organisasi' => $this->post('organisasi'),
+			'alamat' => $this->post('alamat'),
+			'rt_rw' => $this->post('rt_rw'),
+			'kelurahan' => $this->post('kelurahan'),
+			'kec' => $this->post('kec'),
+			'kab' => $this->post('kab'),
+			'prov' => $this->post('prov'),
+			'pendidikan' => $this->post('pendidikan'),
+			'jurusan' => $this->post('jurusan'),
+			'univ' => $this->post('univ'),
+			'thn_lulus' => $this->post('thn_lulus')
+			);
+		$insert = $this->db->insert('user', $data);
+		if($insert){
+			$this->db->where('username', $data['username']);
+			$newdata = $this->db->get('user')->result();
+			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
+		}
+		else{
+			$this->response(array('status' => 'fail'), 502);
+		}
+	}
+	public function index_put()
+	{
+		$data = array(
+			'npsn' => $this->post('npsn'),
+			'thn_ajaran' => $this->post('thn_ajaran'),
+			'nbm' => $this->post('nbm'),
+			'nama_guru' => $this->post('nama_guru'),
+			'bidang' => $this->post('bidang'),
+			'nuptk' => $this->post('nuptk'),
+			'nip' => $this->post('nip'),
+			'tempat_lahir' => $this->post('tempat_lahir'),
+			'tgl_lahir' => $this->post('tgl_lahir'),
+			'telepon' => $this->post('telepon'),
+			'pangakat_golruang' => $this->post('pangakat_golruang'),
+			'tgl_pengangkatan' => $this->post('tgl_pengangkatan'),
+			'sertifikasi_guru' => $this->post('sertifikasi_guru'),
+			'tmt_sertifikasi' => $this->post('tmt_sertifikasi'),
+			'jk' => $this->post('jk'),
+			'sts_pegawai' => $this->post('sts_pegawai'),
+			'organisasi' => $this->post('organisasi'),
+			'alamat' => $this->post('alamat'),
+			'rt_rw' => $this->post('rt_rw'),
+			'kelurahan' => $this->post('kelurahan'),
+			'kec' => $this->post('kec'),
+			'kab' => $this->post('kab'),
+			'prov' => $this->post('prov'),
+			'pendidikan' => $this->post('pendidikan'),
+			'jurusan' => $this->post('jurusan'),
+			'univ' => $this->post('univ'),
+			'thn_lulus' => $this->post('thn_lulus'),
+			);
+		$this->db->where('username', $data['username']);
+		$update = $this->db->update('user', $data);
+		if($update){
+			$this->db->where('username', $data['username']);
+			$newupdate = $this->db->get('user')->result();
+			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+		}
+		else{
+			$this->response(array('status' => 'fail'), 502);
+		}
+	}
+
+	public function index_delete()
+	{
+		$user=$this->delete('username');
+		$this->db->where('username', $user);
+		$delete = $this->db->delete('user');
+		if($delete){
+			$this->response(array('status' => 'succes'), 200);
+		}
+		else{
+			$this->response(array('status' => 'fail'), 502);
+		}
+	}
 }
