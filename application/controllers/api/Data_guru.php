@@ -12,7 +12,7 @@ class Data_guru extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('data_guru')->result();
+		$data = $this->db->get('data_guru')->result();
 		$this->response($user, 200);
 	}
 	public function index_post()
@@ -46,10 +46,10 @@ class Data_guru extends REST_Controller {
 			'univ' => $this->post('univ'),
 			'thn_lulus' => $this->post('thn_lulus')
 			);
-		$insert = $this->db->insert('user', $data);
+		$insert = $this->db->insert('data_guru', $data);
 		if($insert){
-			$this->db->where('username', $data['username']);
-			$newdata = $this->db->get('user')->result();
+			$this->db->where('nip', $data['nip']);
+			$newdata = $this->db->get('data_guru')->result();
 			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
 		}
 		else{
@@ -87,12 +87,12 @@ class Data_guru extends REST_Controller {
 			'univ' => $this->post('univ'),
 			'thn_lulus' => $this->post('thn_lulus'),
 			);
-		$this->db->where('username', $data['username']);
-		$update = $this->db->update('user', $data);
+		$this->db->where('nip', $data['nip']);
+		$update = $this->db->update('data_guru', $data);
 		if($update){
-			$this->db->where('username', $data['username']);
-			$newupdate = $this->db->get('user')->result();
-			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+			$this->db->where('nip', $data['nip']);
+			$newupdate = $this->db->get('data_guru')->result();
+			$this->response(array('status'=>'succes','data_guru'=>$newupdate), 200);
 		}
 		else{
 			$this->response(array('status' => 'fail'), 502);
@@ -101,9 +101,9 @@ class Data_guru extends REST_Controller {
 
 	public function index_delete()
 	{
-		$user=$this->delete('username');
-		$this->db->where('username', $user);
-		$delete = $this->db->delete('user');
+		$nip=$this->delete('nip');
+		$this->db->where('data_guru', $user);
+		$delete = $this->db->delete('data_guru');
 		if($delete){
 			$this->response(array('status' => 'succes'), 200);
 		}

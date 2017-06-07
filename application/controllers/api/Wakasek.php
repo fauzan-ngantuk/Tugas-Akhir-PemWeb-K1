@@ -12,7 +12,7 @@ class Wakasek extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('wakasek')->result();
+		$data = $this->db->get('wakasek')->result();
 		$this->response($user, 200);
 	}
 
@@ -31,10 +31,10 @@ class Wakasek extends REST_Controller {
 			'masa_tugaske' =>$this->post('masa_tugaske'),
 			'tgl_habis' =>$this->post('tgl_habis'),
 			);
-		$insert = $this->db->insert('user', $data);
+		$insert = $this->db->insert('wakasek', $data);
 		if($insert){
-			$this->db->where('username', $data['username']);
-			$newdata = $this->db->get('user')->result();
+			$this->db->where('npsn', $data['npsn']);
+			$newdata = $this->db->get('wakasek')->result();
 			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
 		}
 		else{
@@ -57,12 +57,12 @@ class Wakasek extends REST_Controller {
 			'masa_tugaske' =>$this->post('masa_tugaske'),
 			'tgl_habis' =>$this->post('tgl_habis'),
 			);
-		$this->db->where('username', $data['username']);
-		$update = $this->db->update('user', $data);
+		$this->db->where('npsn', $data['npsn']);
+		$update = $this->db->update('wakasek', $data);
 		if($update){
-			$this->db->where('username', $data['username']);
-			$newupdate = $this->db->get('user')->result();
-			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+			$this->db->where('npsn', $data['npsn']);
+			$newupdate = $this->db->get('wakasek')->result();
+			$this->response(array('status'=>'succes','wakasek'=>$newupdate), 200);
 		}
 		else{
 			$this->response(array('status' => 'fail'), 502);
@@ -71,9 +71,9 @@ class Wakasek extends REST_Controller {
 
 	public function index_delete()
 	{
-		$user=$this->delete('username');
-		$this->db->where('username', $user);
-		$delete = $this->db->delete('user');
+		$npsn=$this->delete('npsn');
+		$this->db->where('wakasek', $user);
+		$delete = $this->db->delete('wakasek');
 		if($delete){
 			$this->response(array('status' => 'succes'), 200);
 		}

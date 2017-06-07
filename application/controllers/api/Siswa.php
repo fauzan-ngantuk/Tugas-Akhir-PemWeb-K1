@@ -12,7 +12,7 @@ class Siswa extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('siswa')->result();
+		$data = $this->db->get('siswa')->result();
 		$this->response($user, 200);
 	}
 	public function index_post()
@@ -29,10 +29,10 @@ class Siswa extends REST_Controller {
 			'non_kms' => $this->post('non_kms'),
 			'jumlah_siswa' => $this->post('jumlah_siswa'),
 			);
-		$insert = $this->db->insert('user', $data);
+		$insert = $this->db->insert('siswa', $data);
 		if($insert){
-			$this->db->where('username', $data['username']);
-			$newdata = $this->db->get('user')->result();
+			$this->db->where('npsn', $data['npsn']);
+			$newdata = $this->db->get('siswa')->result();
 			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
 		}
 		else{
@@ -54,12 +54,12 @@ class Siswa extends REST_Controller {
 			'non_kms' => $this->post('non_kms'),
 			'jumlah_siswa' => $this->post('jumlah_siswa'),
 			);
-		$this->db->where('username', $data['username']);
-		$update = $this->db->update('user', $data);
+		$this->db->where('npsn', $data['npsn']);
+		$update = $this->db->update('siswa', $data);
 		if($update){
-			$this->db->where('username', $data['username']);
-			$newupdate = $this->db->get('user')->result();
-			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+			$this->db->where('npsn', $data['npsn']);
+			$newupdate = $this->db->get('siswa')->result();
+			$this->response(array('status'=>'succes','siswa'=>$newupdate), 200);
 		}
 		else{
 			$this->response(array('status' => 'fail'), 502);
@@ -68,9 +68,9 @@ class Siswa extends REST_Controller {
 
 	public function index_delete()
 	{
-		$user=$this->delete('username');
-		$this->db->where('username', $user);
-		$delete = $this->db->delete('user');
+		$npsn=$this->delete('npsn');
+		$this->db->where('siswa', $user);
+		$delete = $this->db->delete('siswa');
 		if($delete){
 			$this->response(array('status' => 'succes'), 200);
 		}

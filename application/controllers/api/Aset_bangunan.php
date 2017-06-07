@@ -12,8 +12,8 @@ class Aset_bangunan extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('aset_bangunan')->result();
-		$this->response($user, 200);
+		$data = $this->db->get('aset_bangunan')->result();
+		$this->response($data, 200);
 	}
 	public function index_post()
 	{
@@ -30,10 +30,10 @@ class Aset_bangunan extends REST_Controller {
 			'luas_bangunan' => $this->post('luas_bangunan'),
 			'biaya_pembangunan' => $this->post('biaya_pembangunan'),
 			);
-		$insert = $this->db->insert('user', $data);
+		$insert = $this->db->insert('aset_bangunan', $data);
 		if($insert){
-			$this->db->where('username', $data['username']);
-			$newdata = $this->db->get('user')->result();
+			$this->db->where('npsn', $data['npsn']);
+			$newdata = $this->db->get('aset_bangunan')->result();
 			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
 		}
 		else{
@@ -54,12 +54,12 @@ class Aset_bangunan extends REST_Controller {
 			'luas_bangunan' => $this->post('luas_bangunan'),
 			'biaya_pembangunan' => $this->post('biaya_pembangunan'),
 			);
-		$this->db->where('username', $data['username']);
-		$update = $this->db->update('user', $data);
+		$this->db->where('npsn', $data['npsn']);
+		$update = $this->db->update('aset_bangunan', $data);
 		if($update){
-			$this->db->where('username', $data['username']);
-			$newupdate = $this->db->get('user')->result();
-			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+			$this->db->where('npsn', $data['npsn']);
+			$newupdate = $this->db->get('aset_bangunan')->result();
+			$this->response(array('status'=>'succes','aset_bangunan'=>$newupdate), 200);
 		}
 		else{
 			$this->response(array('status' => 'fail'), 502);
@@ -68,9 +68,9 @@ class Aset_bangunan extends REST_Controller {
 
 	public function index_delete()
 	{
-		$user=$this->delete('username');
-		$this->db->where('username', $user);
-		$delete = $this->db->delete('user');
+		$npsn=$this->delete('npsn');
+		$this->db->where('aset_bangunan', $npsn);
+		$delete = $this->db->delete('aset_bangunan');
 		if($delete){
 			$this->response(array('status' => 'succes'), 200);
 		}
