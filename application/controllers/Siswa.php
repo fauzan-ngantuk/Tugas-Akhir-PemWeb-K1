@@ -6,10 +6,10 @@ class Siswa extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('header');
+		$this->load->view('include/header');
 		$data['sis'] = $this->my_lib->get_data('siswa');
 		$this->load->view('page/siswa',$data);
-		$this->load->view('footer');
+		$this->load->view('include/footer');
 	}
 
 	
