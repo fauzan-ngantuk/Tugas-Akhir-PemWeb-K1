@@ -28,16 +28,17 @@ class User extends REST_Controller {
 			);
 		$insert = $this->db->insert('user', $data);
 		if($insert){
-			$this->response(array('status' => 'succes', 200));
+			$this->db->where('username', $data['username']);
+			$newdata = $this->db->get('user')->result();
+			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
 		}
 		else{
-			$this->response(array('status' => 'fail', 502));
+			$this->response(array('status' => 'fail'), 502);
 		}
 	}
 
 	public function index_put()
 	{
-		$user=$this->put('username');
 		$data = array(
 			'username' => $this->put('username'),
 			'email' => $this->put('email'),
@@ -46,13 +47,15 @@ class User extends REST_Controller {
 			'level' => $this->put('level'),
 			'foto' => $this->put('foto'),
 			);
-		$this->db->where('username', $user);
+		$this->db->where('username', $data['username']);
 		$update = $this->db->update('user', $data);
 		if($update){
-			$this->response(array('status' => 'succes', 200));
+			$this->db->where('username', $data['username']);
+			$newupdate = $this->db->get('user')->result();
+			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
 		}
 		else{
-			$this->response(array('status' => 'fail', 502));
+			$this->response(array('status' => 'fail'), 502);
 		}
 	}
 
@@ -62,10 +65,10 @@ class User extends REST_Controller {
 		$this->db->where('username', $user);
 		$delete = $this->db->delete('user');
 		if($delete){
-			$this->response(array('status' => 'succes', 200));
+			$this->response(array('status' => 'succes'), 200);
 		}
 		else{
-			$this->response(array('status' => 'fail', 502));
+			$this->response(array('status' => 'fail'), 502);
 		}
 	}
 }
