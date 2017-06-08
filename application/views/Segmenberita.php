@@ -1,8 +1,10 @@
 <div style="background-color: #f9f9f9">
   <div class="container">
-    <div class="section-card">
-
+    <div class="section-card" style="padding: 50px 0px">
       <!--   Icon Section   -->
+      <center>
+        <h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #26A69A">Berita Terbaru</h5>
+      </center>
       <ul>
 
       <li>
@@ -11,7 +13,7 @@
           <div class="card">
             <div class="card-image">
               <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
-              <h5 class="header black-text" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px">Berita</h5>
+              <h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #26A69A">Berita</h5>
             </div>
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
@@ -27,7 +29,7 @@
           <div class="card">
             <div class="card-image">
               <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
-              <h5 class="header black-text" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px">Berita</h5>
+              <h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #26A69A">Berita</h5>
             </div>
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
@@ -43,7 +45,7 @@
           <div class="card">
             <div class="card-image">
               <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
-              <h5 class="header black-text" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px">Berita</h5>
+              <h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #26A69A">Berita</h5>
             </div>
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
@@ -65,3 +67,5 @@
     </div>
   </div>
 </div>
+
+
