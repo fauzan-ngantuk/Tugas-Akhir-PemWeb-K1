@@ -34,11 +34,11 @@
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
               <ul class="right hide-on-med-and-down">
-                <li><a class="active" href="index.php">Home</a></li>
+                <li><a class="active" href="http://localhost/sekolah/">Home</a></li>
                 <li><a href="http://localhost/sekolah/berita">Berita</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="data">Data<i class="material-icons right">arrow_drop_down</i></a></li>
               <ul class="right hide-on-med-and-down">
-                <li><a class="waves-effect waves-light btn">Login</a></li>
+                <li><a class="waves-effect waves-light btn" href="http://localhost/sekolah/login">Login</a></li>
               </ul>
               </ul>
               <!-- <ul class="side-nav" id="mobile-demo">

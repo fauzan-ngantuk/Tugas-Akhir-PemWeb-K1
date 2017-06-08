@@ -2,8 +2,8 @@
 
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="css/materialize.css">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets2/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets2/css/materialize.css">
   
   <style>
     body {
@@ -41,7 +41,7 @@
   <div class="section"></div>
   <main>
     <center>
-      <img class="responsive-img" style="width: 250px;" src="image/logo.png" />
+      <img class="responsive-img" style="width: 250px; margin-top: 50px" src="<?=base_url()?>assets2/image/logo.png" />
       <div class="section"></div>
 
       <div class="container">
