@@ -37,7 +37,6 @@
                 <li><a class="active" href="index.php">Home</a></li>
                 <li><a href="http://localhost/sekolah/berita">Berita</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="data">Data<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a href="#search"><i class="material-icons">search</i></a></li>
               <ul class="right hide-on-med-and-down">
                 <li><a class="waves-effect waves-light btn">Login</a></li>
               </ul>
@@ -54,6 +53,6 @@
       </nav>
 
       <ul id="data" class="dropdown-content">
-        <li><a href="#">Pencarian</a></li>
+        <li><a href="http://localhost/sekolah/pencarian">Pencarian</a></li>
         <li><a href="http://localhost/sekolah/sekolah">Data Sekolah</a></li>
       </ul>
