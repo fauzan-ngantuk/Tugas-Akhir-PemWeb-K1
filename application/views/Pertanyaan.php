@@ -1,4 +1,4 @@
-<div style="background-image: url('<?=base_url()?>/assets2/image/contact-bg.png'); max-height: 500px; padding: 100px 0px" >
+<div style="background-image: url('<?=base_url()?>/assets2/image/contact-bg-teal.png'); max-height: 500px; padding: 100px 0px" >
   <div class="container">
 
   <h5 class="header center white-text">Punya Pertanyaan? Kontak Kami</h5>
