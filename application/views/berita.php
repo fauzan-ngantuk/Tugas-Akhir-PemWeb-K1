@@ -130,3 +130,12 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+      $('.slider').slider({
+        indicators : false,
+        height : 500
+      });
+    });
+</script>
