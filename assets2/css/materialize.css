@@ -4,7 +4,7 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 .materialize-red {
-  background-color: #e51c23 !important;
+  background-color: #e51c23 !important
 }
 
 .materialize-red-text {
@@ -36,11 +36,11 @@
 }
 
 .materialize-red.lighten-2 {
-  background-color: #00bcd4 !important;
+  background-color: #ee6e73 !important;
 }
 
 .materialize-red-text.text-lighten-2 {
-  color: #00bcd4 !important;
+  color: #ee6e73 !important;
 }
 
 .materialize-red.lighten-1 {
@@ -2551,6 +2551,7 @@ ul:not(.browser-default) li {
   list-style-type: none;
 }
 
+
 a {
   color: #039be5;
   text-decoration: none;
@@ -2617,7 +2618,7 @@ a {
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #00bcd4;
+  border-left: 5px solid #ee6e73;
 }
 
 i {
@@ -2677,7 +2678,7 @@ video.responsive-video {
 }
 
 .pagination li.active {
-  background-color: #00bcd4;
+  background-color: #ee6e73;
 }
 
 .pagination li.disabled a {
@@ -2863,7 +2864,7 @@ ul.staggered-list li {
 
 .page-footer {
   padding-top: 20px;
-  background-color: #333333;
+  background-color: #ee6e73;
 }
 
 .page-footer .footer-copyright {
@@ -2877,7 +2878,7 @@ ul.staggered-list li {
           align-items: center;
   padding: 10px 0px;
   color: rgba(255, 255, 255, 0.8);
-  background-color: #222222;
+  background-color: rgba(51, 51, 51, 0.08);
 }
 
 table, th, td {
@@ -3347,18 +3348,8 @@ nav ul a span.badge {
   width: 90%;
 }
 
-.containersearch {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
-}
-
 @media only screen and (min-width: 601px) {
   .container {
-    width: 85%;
-  }
-
-  .containersearch {
     width: 85%;
   }
 }
@@ -3367,11 +3358,7 @@ nav ul a span.badge {
   .container {
     width: 90%;
   }
-  .containersearch {
-    width: 70%;
-  }
 }
-
 
 .container .row {
   margin-left: -0.75rem;
@@ -4197,7 +4184,7 @@ nav ul a span.badge {
 
 nav {
   color: #fff;
-  background-color: #00bcd4;
+  background-color: #FFFFFF;
   width: 100%;
   height: 56px;
   line-height: 56px;
@@ -4317,9 +4304,11 @@ nav ul li {
   padding: 0;
 }
 
-nav ul li.active {
-  background-color: rgba(0, 0, 0, 0.1);
+nav ul li a.active {
+  color: #4db6ac !important;
+  
 }
+
 
 nav ul a {
   transition: background-color .3s;
@@ -4347,6 +4336,11 @@ nav ul a:hover {
 
 nav ul.left {
   float: left;
+}
+
+nav ul.left1{
+margin-left: 250px;
+
 }
 
 nav form {
@@ -4858,14 +4852,14 @@ small {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #00bcd4;
+  color: #ffab40;
   margin-right: 24px;
   transition: color .3s ease;
   text-transform: uppercase;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-  color: #0190a3;
+  color: #ffd8a6;
 }
 
 .card .card-reveal {
@@ -5037,7 +5031,7 @@ small {
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: #00bcd4;
+  color: #ee6e73;
 }
 
 .tabs .tab.disabled a,
@@ -5050,7 +5044,7 @@ small {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: #00bcd4;
+  background-color: #f6b2b5;
   will-change: left, right;
 }
 
@@ -5402,19 +5396,16 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  background-color: #FFFFFF;
+  background-color: #fff;
   margin: 0;
   display: none;
-  min-width: 300px; /* Changed this to accomodate content width */
-  max-height: auto;
-  margin-left: -1px; /* Add this to keep dropdown in line with edge of navbar */
-  overflow: hidden; /* Changed this from overflow-y:auto; to overflow:hidden; */
+  min-width: 100px;
+  max-height: 650px;
+  overflow-y: auto;
   opacity: 0;
   position: absolute;
-  white-space: nowrap;
-  z-index: 1;
+  z-index: 999;
   will-change: width, height;
-
 }
 
 .dropdown-content li {
@@ -7131,13 +7122,13 @@ input[type=range]:focus::-ms-fill-upper {
 .table-of-contents a:hover {
   color: #a8a8a8;
   padding-left: 19px;
-  border-left: 1px solid #00bcd4;
+  border-left: 1px solid #ee6e73;
 }
 
 .table-of-contents a.active {
   font-weight: 500;
   padding-left: 18px;
-  border-left: 2px solid #00bcd4;
+  border-left: 2px solid #ee6e73;
 }
 
 .side-nav {
@@ -7335,7 +7326,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active,
 .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
-  background-color: #00bcd4;
+  background-color: #ee6e73;
 }
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active a,
@@ -7960,7 +7951,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider .indicators .indicator-item.active {
-  background-color: #00bcd4;
+  background-color: #4CAF50;
 }
 
 .carousel {
@@ -8097,7 +8088,7 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   font-size: 1rem;
   border-radius: 50%;
-  background-color: #00bcd4;
+  background-color: #ee6e73;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
