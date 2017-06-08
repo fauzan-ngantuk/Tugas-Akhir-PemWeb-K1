@@ -12,7 +12,7 @@ class Sarpras extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('sarpras')->result();
+		$data = $this->db->get('sarpras')->result();
 		$this->response($user, 200);
 	}
 	public function index_post()
@@ -29,10 +29,10 @@ class Sarpras extends REST_Controller {
 			'status_kepemilikan' => $this->post('status_kepemilikan'),
 			'tahun_pengadaan' => $this->post('tahun_pengadaan'),
 			);
-		$insert = $this->db->insert('user', $data);
+		$insert = $this->db->insert('sarpras', $data);
 		if($insert){
-			$this->db->where('username', $data['username']);
-			$newdata = $this->db->get('user')->result();
+			$this->db->where('npsn', $data['npsn']);
+			$newdata = $this->db->get('sarpras')->result();
 			$this->response(array('status' => 'succes', 'newdata' => $newdata), 200);
 		}
 		else{
@@ -54,12 +54,12 @@ class Sarpras extends REST_Controller {
 			'status_kepemilikan' => $this->post('status_kepemilikan'),
 			'tahun_pengadaan' => $this->post('tahun_pengadaan'),
 			);
-		$this->db->where('username', $data['username']);
-		$update = $this->db->update('user', $data);
+		$this->db->where('npsn', $data['npsn']);
+		$update = $this->db->update('sarpras', $data);
 		if($update){
-			$this->db->where('username', $data['username']);
-			$newupdate = $this->db->get('user')->result();
-			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+			$this->db->where('npsn', $data['npsn']);
+			$newupdate = $this->db->get('sarpras')->result();
+			$this->response(array('status'=>'succes','sarpras'=>$newupdate), 200);
 		}
 		else{
 			$this->response(array('status' => 'fail'), 502);
@@ -68,9 +68,9 @@ class Sarpras extends REST_Controller {
 
 	public function index_delete()
 	{
-		$user=$this->delete('username');
-		$this->db->where('username', $user);
-		$delete = $this->db->delete('user');
+		$npsn=$this->delete('npsn');
+		$this->db->where('sarpras', $user);
+		$delete = $this->db->delete('sarpras');
 		if($delete){
 			$this->response(array('status' => 'succes'), 200);
 		}

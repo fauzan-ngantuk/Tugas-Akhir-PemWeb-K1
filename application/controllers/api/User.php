@@ -12,7 +12,7 @@ class User extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('user')->result();
+		$data = $this->db->get('user')->result();
 		$this->response($user, 200);
 	}
 

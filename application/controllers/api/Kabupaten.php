@@ -12,7 +12,7 @@ class Kabupaten extends REST_Controller {
 
 	public function index_get()
 	{
-		$user = $this->db->get('kabupaten')->result();
+		$data = $this->db->get('kabupaten')->result();
 		$this->response($user, 200);
 	}
 	public function index_put()
@@ -21,12 +21,12 @@ class Kabupaten extends REST_Controller {
 			'id' => $this->post('id'),
 			'kabupaten' => $this->post('kabupaten'),
 			);
-		$this->db->where('username', $data['username']);
-		$update = $this->db->update('user', $data);
+		$this->db->where('id', $data['id']);
+		$update = $this->db->update('kabupaten', $data);
 		if($update){
-			$this->db->where('username', $data['username']);
-			$newupdate = $this->db->get('user')->result();
-			$this->response(array('status'=>'succes','user'=>$newupdate), 200);
+			$this->db->where('id', $data['id']);
+			$newupdate = $this->db->get('kabupaten')->result();
+			$this->response(array('status'=>'succes','kabupaten'=>$newupdate), 200);
 		}
 		else{
 			$this->response(array('status' => 'fail'), 502);
@@ -35,9 +35,9 @@ class Kabupaten extends REST_Controller {
 
 	public function index_delete()
 	{
-		$user=$this->delete('username');
-		$this->db->where('username', $user);
-		$delete = $this->db->delete('user');
+		$id=$this->delete('id');
+		$this->db->where('kabupaten', $user);
+		$delete = $this->db->delete('kabupaten');
 		if($delete){
 			$this->response(array('status' => 'succes'), 200);
 		}
