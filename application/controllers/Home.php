@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('include/header');
 		$this->load->view('jumbotron');
+		$this->load->view('dataoverview');
 		$this->load->view('segmenberita');
 		$this->load->view('pertanyaan');
 		$this->load->view('include/footer');

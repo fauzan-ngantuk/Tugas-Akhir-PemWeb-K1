@@ -38,8 +38,8 @@
             </div>
           </div>
         </div>
-
-        <div class="col s12 m4">
+      
+      <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
               <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
@@ -54,8 +54,6 @@
             </div>
           </div>
         </div>
-      
-      
         
 
       </div>
