@@ -10,7 +10,7 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="<?=base_url()?>assets2/image/sekolah1.jpg">
+              <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
               <h5 class="header black-text" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px">Berita</h5>
             </div>
             <div class="card-content">
@@ -26,7 +26,7 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="<?=base_url()?>assets2/image/sekolah1.jpg">
+              <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
               <h5 class="header black-text" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px">Berita</h5>
             </div>
             <div class="card-content">
@@ -42,7 +42,7 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="<?=base_url()?>assets2/image/sekolah1.jpg">
+              <div style="height: 230px; width: 100%; background-image: url('<?=base_url()?>assets2/image/sekolah1.jpg'); background-size: 100%"></div>
               <h5 class="header black-text" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px">Berita</h5>
             </div>
             <div class="card-content">
