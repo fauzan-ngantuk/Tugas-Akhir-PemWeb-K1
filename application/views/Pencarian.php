@@ -2,7 +2,6 @@
   <div class="container">
     <br>
     <br>
-
     <div class="row">
       <div id="admin" class="col s12">
         <div class="card material-table">
@@ -10,34 +9,42 @@
             <span class="table-title">Data Sekolah</span>
             <div class="actions">
               <div class="input-field inline">
-                <input id="npsn" type="text">
-                <label for="npsn">Masukan NPSN</label>
+                <form method="POST">
+                  <input name="npsn" type="text">
+                  <label for="npsn">Masukan NPSN</label>  
+                  <button class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></button>
+                </form>
               </div>
-              <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
             </div>
           </div>
             <table id="datatable"> 
               <thead>
                 <tr>
-                  <th><b>No</b></th>
                   <th><b>Jenjang</b></th>
                   <th><b>Nama Sekolah</b></th>
                   <th><b>NPSN</b></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td><a href="<?=base_url()?>sekolah/detail/"></a></td>
-                  <td></td>
-                </tr>
+              <?php
+                
+                foreach ($sekolah as $s) { 
+                  // print_r($sekolah);?>
+                  
+                  <tr>
+                    <td><?php echo $s->jenjang; ?></td>
+                    <td><?php echo $s->nama_sekolah; ?></td>
+                    <td><a href="<?=base_url()?>sekolah/detail/<?php echo "$s->npsn";?>"><?php echo $s->npsn; ?></a></td>
+                  </tr>
+                <?php
+                }
+              ?>
+                
           </tbody>
         </table>
       </div>
     </div>
   </div>
   </div>
-  
 </div>
 

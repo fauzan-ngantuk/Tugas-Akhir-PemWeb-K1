@@ -12,8 +12,16 @@ class Profil extends REST_Controller {
 
 	public function index_get()
 	{
-		$data = $this->db->get('profil')->result();
-		$this->response($user, 200);
+		$npsn = $this->get('npsn');
+		if ($npsn == '') {
+			# code...
+			$data = $this->db->get('profil')->result();
+		}
+		else{
+			$this->db->where('npsn', $npsn);
+			$data = $this->db->get('profil')->result();
+		}
+		$this->response($data, 200);
 	}
 	public function index_post()
 	{
