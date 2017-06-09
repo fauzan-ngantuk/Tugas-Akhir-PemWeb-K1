@@ -13,7 +13,7 @@ class Siswa extends REST_Controller {
 	public function index_get()
 	{
 		$data = $this->db->get('siswa')->result();
-		$this->response($user, 200);
+		$this->response($data, 200);
 	}
 	public function index_post()
 	{

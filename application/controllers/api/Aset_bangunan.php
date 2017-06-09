@@ -40,31 +40,7 @@ class Aset_bangunan extends REST_Controller {
 			$this->response(array('status' => 'fail'), 502);
 		}
 	}
-	public function index_put()
-	{
-		$d'npsn' => $this->post('npsn'),
-			'nama_bangunan' => $this->post('nama_bangunan'),
-			'kode_bangunan' => $this->post('kode_bangunan'),
-			'register_bangunan' => $this->post('register_bangunan'),
-			'kondisi_bangunan' => $this->post('kondisi_bangunan'),
-			'konstruksi_bangunan' => $this->post('konstruksi_bangunan'),
-			'luas_lantai' => $this->post('luas_lantai'),
-			'lokasi' => $this->post('lokasi'),
-			'tahun_pembangunan' => $this->post('tahun_pembangunan'),
-			'luas_bangunan' => $this->post('luas_bangunan'),
-			'biaya_pembangunan' => $this->post('biaya_pembangunan'),
-			);
-		$this->db->where('npsn', $data['npsn']);
-		$update = $this->db->update('aset_bangunan', $data);
-		if($update){
-			$this->db->where('npsn', $data['npsn']);
-			$newupdate = $this->db->get('aset_bangunan')->result();
-			$this->response(array('status'=>'succes','aset_bangunan'=>$newupdate), 200);
-		}
-		else{
-			$this->response(array('status' => 'fail'), 502);
-		}
-	}
+	
 
 	public function index_delete()
 	{
