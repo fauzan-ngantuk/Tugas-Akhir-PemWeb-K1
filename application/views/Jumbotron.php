@@ -6,7 +6,7 @@
           <h5 class="header jarak-button col s12 light" style="margin-bottom: 0px; font-size: 18px">DATA POKOK PENDIDIKAN DASAR DAN MENENGAH DAERAH ISTIMEWA YOGYAKRATA</h5>
         </div>
         <div class="row center" \>
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" style="margin-top: 20px">SELENGKAPNYA</a>
+          <a href="http://localhost/sekolah/sekolah" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" style="margin-top: 20px">SELENGKAPNYA</a>
         </div>
         <br><br>
 
