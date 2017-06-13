@@ -7,7 +7,8 @@ class Berita extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('include/header');
-		$this->load->view('berita');
+		$data['berita'] = $this->my_lib->get_data('berita');
+		$this->load->view('berita', $data);
 		$this->load->view('include/footer');
 	}
 
