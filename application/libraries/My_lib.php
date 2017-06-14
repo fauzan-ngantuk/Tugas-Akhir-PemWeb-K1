@@ -197,4 +197,13 @@ class My_lib {
 			}
 		}
 	}
+
+	function loadndata ($n, $table){
+		$this->CI->db->select("*");
+		$this->CI->db->from($table);
+		$this->CI->db->order_by("id desc");
+		$this->CI->db->limit($n);
+		$sql = $this->CI->db->get();
+		return $sql->result();	
+	}
 }
