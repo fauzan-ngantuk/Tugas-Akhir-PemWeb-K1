@@ -37,7 +37,7 @@
                 <?=$key->deskripsi;?>
               </div>
               <div class="card-action">
-                <a href="#" style="color: #26A69A">selengkapnya</a>
+                <a href="http://localhost/sekolah/artikel/publish/<?php echo $key->id ?>" style="color: #26A69A">selengkapnya</a>
               </div>
             </div>
           </div>
