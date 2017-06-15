@@ -35,6 +35,7 @@ class Sekolah extends CI_Controller {
 		$this->load->view('include/header');
 		$id = $this->uri->segment(3);
 		$data['detail'] = $this->my_lib->get_data('profil',array('npsn'=>$id));
+		// print_r($data);
 		$this->load->view('page/sekolah_detail',$data);
 		$this->load->view('include/footer');
 	}

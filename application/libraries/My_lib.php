@@ -152,7 +152,6 @@ class My_lib {
 
 	function get_data($table,$where=array(),$order='',$group='',$limit=null,$start=null){
 
-
 		if(!empty($table))	{
 			if(!empty($where)){
 				$this->CI->db->where($where);
